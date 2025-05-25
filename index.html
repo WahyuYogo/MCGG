@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lineup Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 p-5 text-center">
+
+    <div class="container max-w-3xl mx-auto">
+        <div id="lineup-container" class="relative w-full aspect-square">
+            <img src="img/en.png" id="lineup-template" class="w-full h-full object-cover block" />
+            <div class="hero-slots absolute inset-0 w-full h-full">
+                <!-- Commander -->
+                <div class="overflow-hidden rounded absolute" style="top: 37%; left: 37%; width: 70px; height: 70px;">
+                    <img src="img/CMD00.svg" class="w-full h-full object-cover hero" data-index="CMD" />
+                </div>
+
+                <!-- Title -->
+                <div class="absolute text-white" style="top: 92px; left: -8px;">
+                    <p id="title-text" class="text-white text-uppercase w-48 text-center cursor-pointer">Title</p>
+                </div>
+                <!-- Title End -->
+
+                <!-- Synergy -->
+                <div id="synergy-list-static" class="flex flex-col gap-1 absolute"
+                    style="top: 155px; left: 32px; font-size: 10px; width: 80px;">
+                </div>
+                <!-- Synergy End -->
+
+
+                <!-- Slot Hero -->
+                <input type="file" id="hero-image-picker" accept="image/*" class="hidden">
+                <div class="flex flex-row space-x-2 absolute" style="top: 57%; left: 3%;">
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="0" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="1" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="2" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="3" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="4" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="5" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="6" />
+                    </div>
+                </div>
+                <div class="flex flex-row space-x-2 absolute" style="top: 70%; left: 3%;">
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="7" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="8" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="9" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="10" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="11" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="12" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="13" />
+                    </div>
+                </div>
+                <div class="flex flex-row space-x-2 absolute" style="top: 83%; left: 3%;">
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="14" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="15" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="16" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="17" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="18" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="19" />
+                    </div>
+                    <div class="w-12 h-12 overflow-hidden rounded">
+                        <img src="img/slot.svg" class="w-full h-full object-cover hero" data-index="20" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="hero-gallery" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden items-center justify-center">
+                <div class="bg-white p-4 rounded-lg max-w-md w-full">
+
+                    <!-- Filter Dropdown -->
+                    <div class="mb-4">
+                        <label class="block text-xl font-bold mb-3">Hero Gallery</label>
+                        <div id="role-filter" class="flex overflow-x-auto space-x-2 no-scrollbar">
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="all">All</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="feaborn">Feaborn</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="mage">Mage</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="stargazer">Stargazer</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="support">Support</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="bruiser">Bruiser</button>
+                        </div>
+                    </div>
+
+                    <!-- Hero Gallery Grid -->
+                    <div id="hero-gallery-grid" class="grid grid-cols-5 gap-4">
+                        <img src="img/slot.svg" class="hero-option cursor-pointer w-full h-auto rounded" data-role="all"
+                            alt="">
+                        <img src="img/hero/Angela.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="feaborn,mage" alt="">
+                        <img src="img/hero/Esme.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="feaborn,dauntless,support" alt="">
+                        <img src="img/hero/Guin.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="feaborn,bruiser" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Galeri CMD -->
+            <div id="cmd-gallery" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 p-4 overflow-auto">
+                <div class="bg-white rounded p-4 max-w-2xl mx-auto">
+                    <h2 class="text-xl font-bold mb-4">Pilih Commander</h2>
+                    <div class="grid grid-cols-4 gap-2">
+                        <!-- Hanya CMD -->
+                        <img src="img/CMD00.svg" class="w-16 h-16 object-cover cursor-pointer cmd-option" />
+                        <img src="img/Cmd/Moskov.svg" class="w-16 h-16 object-cover cursor-pointer cmd-option" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input type="file" accept="image/*" id="hero-image-picker" class="hidden" />
+        <div class="mt-5">
+            <button id="download-btn"
+                class="px-5 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition-colors">Export</button>
+        </div>
+
+        <div id="title-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-4 w-64">
+                <h2 class="text-lg font-bold mb-2">Ganti Title</h2>
+                <input type="text" id="title-input" class="w-full border px-2 py-1 rounded mb-4" />
+                <div class="flex justify-end space-x-2">
+                    <button id="cancel-btn" class="px-3 py-1 bg-gray-300 rounded">Batal</button>
+                    <button id="save-btn" class="px-3 py-1 bg-orange-500 text-white rounded">Simpan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Tambah Sinergy -->
+        <button id="add-synergy-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 my-4">
+            Tambah Sinergy
+        </button>
+
+        <!-- Container Hasil Sinergy -->
+        <div id="synergy-list-editable" class="flex flex-wrap gap-2 mb-4"></div>
+
+        <!-- Modal Pop-up -->
+        <div id="synergy-modal"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white p-6 rounded-lg w-full max-w-sm">
+                <h2 class="text-xl font-bold mb-4">Pilih Sinergy</h2>
+
+                <label class="block mb-2 font-medium">Jenis Sinergy:</label>
+                <select id="synergy-type" class="w-full border rounded px-3 py-2 mb-4">
+                    <option value="">-- Pilih Sinergy --</option>
+                    <option value="mage">Mage</option>
+                    <option value="warrior">Warrior</option>
+                    <option value="support">Support</option>
+                    <option value="tank">Tank</option>
+                    <option value="feaborn">Feaborn</option>
+                    <option value="stargazer">Stargazer</option>
+                    <option value="bruiser">Bruiser</option>
+                </select>
+
+                <label class="block mb-2 font-medium">Jumlah:</label>
+                <input type="number" id="synergy-count" class="w-full border rounded px-3 py-2 mb-4" min="1" max="9"
+                    value="1">
+
+                <div class="flex justify-end gap-2">
+                    <button id="cancel-synergy" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Batal</button>
+                    <button id="save-synergy"
+                        class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Simpan</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@2.9.0/dist/dom-to-image-more.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+    <script src="export.js"></script>
+    <script src="hero.js"></script>
+</body>
+
+</html>

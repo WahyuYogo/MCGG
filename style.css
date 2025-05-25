@@ -1,0 +1,27 @@
+:root {
+    --loadingBackground: #0f2546;
+}
+
+* {
+    font-family: "DM Serif Display", serif;
+}
+
+.role-btn.active {
+    background-color: #f97316;
+    /* warna oranye */
+    color: white;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.role-btn.active {
+    background-color: #f97316;
+    color: white;
+}
