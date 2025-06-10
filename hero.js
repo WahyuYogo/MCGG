@@ -50,7 +50,7 @@ function renderSynergyLists() {
 
         // Versi Static
         const staticBox = document.createElement('div');
-        staticBox.className = 'bg-gradient-to-t from-orange-500 to-red-600 rounded-full border border-white font-thin capitalize text-white';
+        staticBox.className = 'bg-gradient-to-t from-[rgba(249,115,22,0.1)] to-[rgba(220,38,38,0.1)] rounded-full border border-white font-thin capitalize text-white flex items-center justify-center';
         staticBox.textContent = `[${item.count}] ${item.type}`;
         staticBox.style = 'height: 16px;'
         synergyListStatic.appendChild(staticBox);

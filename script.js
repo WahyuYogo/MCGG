@@ -42,27 +42,41 @@ document.getElementById('hero-gallery').addEventListener('click', (e) => {
     }
 });
 
-document.querySelectorAll('.role-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        // Buat semua button tidak aktif dulu
-        document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
+const filters = {
+    gold: 'all',
+    faction: 'all'
+};
 
-        // Aktifkan tombol yang diklik
-        this.classList.add('active');
+document.querySelectorAll('.role-group').forEach(group => {
+    const groupName = group.dataset.group;
 
-        const selectedRole = this.dataset.role;
-        const heroes = document.querySelectorAll('#hero-gallery-grid .hero-option');
+    group.querySelectorAll('.role-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            // Update active state
+            group.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
 
-        heroes.forEach(hero => {
-            const roles = hero.getAttribute('data-role').split(',');
-            if (selectedRole === 'all' || roles.includes(selectedRole)) {
-                hero.classList.remove('hidden');
-            } else {
-                hero.classList.add('hidden');
-            }
+            // Update filter value
+            filters[groupName] = this.dataset.role;
+
+            // Apply filtering
+            const heroes = document.querySelectorAll('#hero-gallery-grid .hero-option');
+            heroes.forEach(hero => {
+                const heroRoles = hero.dataset.role.split(',');
+
+                const matchesGold = filters.gold === 'all' || heroRoles.includes(filters.gold);
+                const matchesFaction = filters.faction === 'all' || heroRoles.includes(filters.faction);
+
+                if (matchesGold && matchesFaction) {
+                    hero.classList.remove('hidden');
+                } else {
+                    hero.classList.add('hidden');
+                }
+            });
         });
     });
 });
+
 
 
 const titleText = document.getElementById('title-text');

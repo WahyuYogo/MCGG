@@ -17,18 +17,18 @@
 
 <body class="bg-gray-100 p-5 text-center">
 
-    <div class="container max-w-3xl mx-auto">
+    <div class="container max-w-3xl mx-auto" style="height: 408px; width: 408px;">
         <div id="lineup-container" class="relative w-full aspect-square">
             <img src="img/en.png" id="lineup-template" class="w-full h-full object-cover block" />
             <div class="hero-slots absolute inset-0 w-full h-full">
                 <!-- Commander -->
-                <div class="overflow-hidden rounded absolute" style="top: 37%; left: 37%; width: 70px; height: 70px;">
+                <div class="overflow-hidden rounded absolute" style="top: 37%; left: 37%; width: 65px; height: 65px;">
                     <img src="img/CMD00.svg" class="w-full h-full object-cover hero" data-index="CMD" />
                 </div>
 
                 <!-- Title -->
-                <div class="absolute text-white" style="top: 92px; left: -8px;">
-                    <p id="title-text" class="text-white text-uppercase w-48 text-center cursor-pointer">Title</p>
+                <div class="absolute text-white" style="top: 84px; left: -8px;">
+                    <p id="title-text" class="text-white text-uppercase w-48 text-center cursor-pointer">YourName</p>
                 </div>
                 <!-- Title End -->
 
@@ -119,32 +119,164 @@
                     <!-- Filter Dropdown -->
                     <div class="mb-4">
                         <label class="block text-xl font-bold mb-3">Hero Gallery</label>
-                        <div id="role-filter" class="flex overflow-x-auto space-x-2 no-scrollbar">
+                        <!-- Gold Filter -->
+                        <div class="role-group flex overflow-x-auto space-x-2 no-scrollbar" data-group="gold">
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap active"
+                                data-role="all">All</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap" data-role="1">1
+                                Gold</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap" data-role="2">2
+                                Gold</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap" data-role="3">3
+                                Gold</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap" data-role="4">4
+                                Gold</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap" data-role="5">5
+                                Gold</button>
                             <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="special">Special</button>
+                        </div>
+
+                        <!-- Faction Filter -->
+                        <div class="role-group flex overflow-x-auto space-x-2 no-scrollbar mt-2" data-group="faction">
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap active"
                                 data-role="all">All</button>
                             <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
-                                data-role="feaborn">Feaborn</button>
+                                data-role="feaborn">Faeborn</button>
                             <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
-                                data-role="mage">Mage</button>
+                                data-role="shade">Shadewever</button>
                             <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
-                                data-role="stargazer">Stargazer</button>
+                                data-role="exo">Exorcist</button>
                             <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
-                                data-role="support">Support</button>
+                                data-role="eru">Eruditio</button>
                             <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
-                                data-role="bruiser">Bruiser</button>
+                                data-role="nv">Northern Vale</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="da">Dragon Altar</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="doom">Doomsworn</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="dawn">Dawnbringer</button>
+                            <button class="role-btn bg-gray-200 px-3 py-1 rounded whitespace-nowrap"
+                                data-role="ember">Emberlord</button>
                         </div>
                     </div>
 
                     <!-- Hero Gallery Grid -->
-                    <div id="hero-gallery-grid" class="grid grid-cols-5 gap-4">
-                        <img src="img/slot.svg" class="hero-option cursor-pointer w-full h-auto rounded" data-role="all"
-                            alt="">
-                        <img src="img/Hero/Angela.svg" class="hero-option cursor-pointer w-full h-auto rounded"
-                            data-role="feaborn,mage" alt="">
-                        <img src="img/Hero/Esme.svg" class="hero-option cursor-pointer w-full h-auto rounded"
-                            data-role="feaborn,dauntless,support" alt="">
-                        <img src="img/Hero/Guin.svg" class="hero-option cursor-pointer w-full h-auto rounded"
-                            data-role="feaborn,bruiser" alt="">
+                    <div id="hero-gallery-grid" class="grid grid-cols-5 gap-4 overflow-x-auto no-scrollbar"
+                        style="max-height: 50vh;">
+                        <img src="img/slot.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="all,special" alt="">
+                        <img src="img/Hero/Faeborn/Angela.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,feaborn" alt="">
+                        <img src="img/Hero/Faeborn/Esme.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,feaborn" alt="">
+                        <img src="img/Hero/Faeborn/Guin.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,feaborn" alt="">
+                        <img src="img/Hero/Exo/Haya.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,exo" alt="">
+                        <img src="img/Hero/Exo/Granger.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,exo" alt="">
+                        <img src="img/Hero/Exo/Kagura.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,exo" alt="">
+                        <img src="img/Hero/Exo/Yuzong.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="5,exo" alt="">
+                        <img src="img/Hero/Dawn/Vale.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="1,dawn" alt="">
+                        <img src="img/Hero/Dawn/Aldous.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,dawn" alt="">
+                        <img src="img/Hero/Dawn/Gusion.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,dawn" alt="">
+                        <img src="img/Hero/Dawn/Uranus.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,dawn" alt="">
+                        <img src="img/Hero/Dawn/Terizla.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,dawn" alt="">
+                        <img src="img/Hero/Dawn/Vexana.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,dawn" alt="">
+                        <img src="img/Hero/Shade/Helcurt.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="1,shade" alt="">
+                        <img src="img/Hero/Shade/Luo.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,shade" alt="">
+                        <img src="img/Hero/Shade/Clint.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,shade" alt="">
+                        <img src="img/Hero/Shade/Alhpa.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="5,shade" alt="">
+                        <img src="img/Hero/Ember/Badang.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="1,ember" alt="">
+                        <img src="img/Hero/Ember/Balmond.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,ember" alt="">
+                        <img src="img/Hero/Ember/Thamuz.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,ember" alt="">
+                        <img src="img/Hero/Ember/Kaja.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,ember" alt="">
+                        <img src="img/Hero/Ember/Gord.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,ember" alt="">
+                        <img src="img/Hero/Ember/Moskov.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="5,ember" alt="">
+                        <img src="img/Hero/Astro/Zhask.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="1,astro" alt="">
+                        <img src="img/Hero/Astro/Martis.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,astro" alt="">
+                        <img src="img/Hero/Astro/Odette.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,astro" alt="">
+                        <img src="img/Hero/Astro/Karina.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,astro" alt="">
+                        <img src="img/Hero/Astro/Lunox.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,astro" alt="">
+                        <img src="img/Hero/Astro/Mino.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="5,astro" alt="">
+                        <img src="img/Hero/Doom/Cyclop.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="1,doom" alt="">
+                        <img src="img/Hero/Doom/Hylos.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,doom" alt="">
+                        <img src="img/Hero/Doom/Dyrroth.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,doom" alt="">
+                        <img src="img/Hero/Doom/Irithel.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,doom" alt="">
+                        <img src="img/Hero/Doom/Argus.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,doom" alt="">
+                        <img src="img/Hero/Doom/Franco.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="5,doom" alt="">
+                        <img src="img/Hero/Doom/Hanabi.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="special,doom" alt="">
+                        <img src="img/Hero/NV/Atlas.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="1,nv" alt="">
+                        <img src="img/Hero/NV/Masha.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,nv" alt="">
+                        <img src="img/Hero/NV/Freya.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,nv" alt="">
+                        <img src="img/Hero/NV/Popol.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,nv" alt="">
+                        <img src="img/Hero/NV/Yve.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,nv" alt="">
+                        <img src="img/Hero/NV/Rora.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="5,nv" alt="">
+                        <img src="img/Hero/DA/Wanwan.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="1,da" alt="">
+                        <img src="img/Hero/DA/Akai.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,da" alt="">
+                        <img src="img/Hero/DA/Suyou.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,da" alt="">
+                        <img src="img/Hero/DA/Change.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,da" alt="">
+                        <img src="img/Hero/DA/Ling.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,da" alt="">
+                        <img src="img/Hero/DA/Sun.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="5,da" alt="">
+                        <img src="img/Hero/Eru/Lolita.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="1,eru" alt="">
+                        <img src="img/Hero/Eru/Diggie.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,eru" alt="">
+                        <img src="img/Hero/Eru/Layla.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="2,eru" alt="">
+                        <img src="img/Hero/Eru/Johnson.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="3,eru" alt="">
+                        <img src="img/Hero/Eru/Nolan.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="4,eru" alt="">
+                        <img src="img/Hero/Eru/Natan.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="5,eru" alt="">
+                        <img src="img/Hero/Secret.svg" class="hero-option cursor-pointer w-full h-auto rounded"
+                            data-role="special" alt="">
                     </div>
                 </div>
             </div>
@@ -181,9 +313,9 @@
         </div>
 
         <!-- Tombol Tambah Sinergy -->
-        <button id="add-synergy-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 my-4">
+        <!-- <button id="add-synergy-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 my-4">
             Tambah Sinergy
-        </button>
+        </button> -->
 
         <!-- Container Hasil Sinergy -->
         <div id="synergy-list-editable" class="flex flex-wrap gap-2 mb-4"></div>
