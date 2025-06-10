@@ -41,6 +41,11 @@ document.getElementById('hero-gallery').addEventListener('click', (e) => {
         e.target.classList.add('hidden');
     }
 });
+document.getElementById('cmd-gallery').addEventListener('click', (e) => {
+    if (e.target.id === 'cmd-gallery') {
+        e.target.classList.add('hidden');
+    }
+});
 
 const filters = {
     gold: 'all',
